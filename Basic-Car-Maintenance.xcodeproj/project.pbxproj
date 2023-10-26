@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		023057F22ACFAD79006C5A73 /* EditEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023057F12ACFAD79006C5A73 /* EditEventDetailView.swift */; };
 		154984AA2AD9CAEE0015594C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154984A92AD9CAEE0015594C /* Constants.swift */; };
+		254223552AE9DDE300F2BF44 /* EditOdometerReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254223542AE9DDE300F2BF44 /* EditOdometerReadingView.swift */; };
 		57CDD99E2ADC3173002EFED0 /* OdometerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CDD99D2ADC3173002EFED0 /* OdometerViewModel.swift */; };
 		57CDD9A02ADC31A8002EFED0 /* AddOdometerReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CDD99F2ADC31A8002EFED0 /* AddOdometerReadingView.swift */; };
 		57CDD9A42ADC320F002EFED0 /* OdometerReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CDD9A32ADC320F002EFED0 /* OdometerReading.swift */; };
@@ -100,6 +101,7 @@
 /* Begin PBXFileReference section */
 		023057F12ACFAD79006C5A73 /* EditEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventDetailView.swift; sourceTree = "<group>"; };
 		154984A92AD9CAEE0015594C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		254223542AE9DDE300F2BF44 /* EditOdometerReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOdometerReadingView.swift; sourceTree = "<group>"; };
 		57CDD99D2ADC3173002EFED0 /* OdometerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdometerViewModel.swift; sourceTree = "<group>"; };
 		57CDD99F2ADC31A8002EFED0 /* AddOdometerReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOdometerReadingView.swift; sourceTree = "<group>"; };
 		57CDD9A32ADC320F002EFED0 /* OdometerReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdometerReading.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				FFE0AF552AD66C3500AB46F8 /* OdometerView.swift */,
 				57CDD99F2ADC31A8002EFED0 /* AddOdometerReadingView.swift */,
+				254223542AE9DDE300F2BF44 /* EditOdometerReadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				FFBFE0972A98F7CB000A9BEB /* AddVehicleView.swift in Sources */,
 				E584996A2ACDDAFF00634660 /* Contributor.swift in Sources */,
 				8014A4D32AD77C92005B51F6 /* ChooseAppIconViewModel.swift in Sources */,
+				254223552AE9DDE300F2BF44 /* EditOdometerReadingView.swift in Sources */,
 				8014A4CF2AD75928005B51F6 /* AppIcon.swift in Sources */,
 				FFC67D1D2AAEF7920073B338 /* SettingsViewModel.swift in Sources */,
 				FF755B3C2A908E3E00F49A13 /* DashboardView.swift in Sources */,

@@ -12,10 +12,12 @@ struct OdometerView: View {
     @Environment(ActionService.self) var actionService
     
     @State private var viewModel: OdometerViewModel
-
+    @State private var isShowingEditView = false
+    @State private var selectedOdometerReading: OdometerReading?
+    
     init(authenticationViewModel: AuthenticationViewModel) {
-        viewModel = OdometerViewModel(authenticationViewModel: authenticationViewModel)
-    }
+            _viewModel = State(initialValue: OdometerViewModel(authenticationViewModel: authenticationViewModel))
+        }
 
     var body: some View {
         NavigationStack {
@@ -28,6 +30,20 @@ struct OdometerView: View {
                         Text("For \(reading.vehicle.name)")
                         
                         Text("\(reading.date.formatted(date: .abbreviated, time: .omitted))")
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button {
+                            selectedOdometerReading = reading
+                            isShowingEditView = true
+                        } label: {
+                            VStack {
+                                Text("Edit")
+                                Image(systemName: "pencil")
+                            }
+                        }
+                    }
+                    .sheet(isPresented: $isShowingEditView) {
+                        EditOdometerReadingView(selectedOdometerReading: $selectedOdometerReading, viewModel: viewModel)
                     }
                 }
                 .listStyle(.inset)
