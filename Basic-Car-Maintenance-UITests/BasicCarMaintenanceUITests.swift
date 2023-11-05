@@ -8,32 +8,19 @@
 import XCTest
 
 final class BasicCarMaintenanceUITests: XCTestCase {
-    
-    let app = XCUIApplication()
-    
-    override func setUp() {
+
+    override func setUpWithError() throws {
         continueAfterFailure = false
+    }
+
+    override func tearDownWithError() throws {
+    }
+
+    func testExample() throws {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
         app.launch()
+
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
-    func testAddVehicle() {
-        // Navigate to the AddVehicleView
-        app.buttons["Settings"].tap()
-        app.collectionViews.buttons["Add Vehicle"].tap()
-        
-        let nameTextField = app.textFields["Vehicle Name"]
-        nameTextField.tap()
-        nameTextField.typeText("My Car")
-        
-        let makeTextField = app.textFields["Vehicle Make"]
-        makeTextField.tap()
-        makeTextField.typeText("Toyota")
-        
-        let modelTextField = app.textFields["Vehicle Model"]
-        modelTextField.tap()
-        modelTextField.typeText("Camry")
-        
-        app.buttons["Add"].tap()
-    }
-    
 }

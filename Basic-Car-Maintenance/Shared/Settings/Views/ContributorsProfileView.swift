@@ -11,7 +11,7 @@ struct ContributorsProfileView: View {
     
     let name: String
     let imgUrl: String
-    @ScaledMetric(relativeTo: .largeTitle) var imageSize: CGFloat = 50
+    @ScaledMetric(relativeTo: .largeTitle) var imgFrame: CGFloat = 50
 
     init(name: String, url: String) {
         self.name = name
@@ -23,28 +23,32 @@ struct ContributorsProfileView: View {
             AsyncImage(url: URL(string: imgUrl)!) { phase in
                 switch phase {
                 case .empty:
-                    ProgressView()
-                        .frame(width: imageSize, height: imageSize)
                     
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: imgFrame, height: imgFrame)
+                        .foregroundColor(.gray)
                 case .success(let image):
+                    
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: imageSize, height: imageSize)
+                        .frame(width: imgFrame, height: imgFrame)
                         .clipShape(Circle())
-                    
                 case .failure:
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: imageSize, height: imageSize)
-                        .foregroundColor(.gray)
                     
-                @unknown default:
                     Image(systemName: "person.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: imageSize, height: imageSize)
+                        .frame(width: imgFrame, height: imgFrame)
+                        .foregroundColor(.gray)
+                @unknown default:
+                    
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: imgFrame, height: imgFrame)
                         .foregroundColor(.gray)
                 }
             }
